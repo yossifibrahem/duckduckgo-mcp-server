@@ -241,5 +241,9 @@ async def fetch_content(url: str, ctx: Context) -> str:
     return await fetcher.fetch_and_parse(url, ctx)
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+
+if __name__ == "__main__":
+    main()

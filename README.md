@@ -10,16 +10,14 @@ A Model Context Protocol (MCP) server that provides web search capabilities thro
 - **Error Handling**: Comprehensive error handling and logging
 - **LLM-Friendly Output**: Results formatted specifically for large language model consumption
 
+I'll help you update your README with the new installation and configuration instructions. Based on your successful PyPI publication, here's how we should modify the Installation and Usage sections of your README:
+
 ## Installation
 
-This server requires Python 3.10 or higher. Install dependencies using `uv` (recommended) or `pip`:
+Install directly from PyPI using `uv`:
 
 ```bash
-# Using uv (recommended)
-uv add "mcp[cli]" httpx beautifulsoup4
-
-# Using pip
-pip install "mcp[cli]" httpx beautifulsoup4
+uv pip install duckduckgo-mcp-server
 ```
 
 ## Usage
@@ -27,14 +25,18 @@ pip install "mcp[cli]" httpx beautifulsoup4
 ### Running with Claude Desktop
 
 1. Download [Claude Desktop](https://claude.ai/download)
-2. Create or edit `claude_desktop_config.json`:
+2. Create or edit your Claude Desktop configuration:
+   - On macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   - On Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
+Add the following configuration:
 
 ```json
 {
     "mcpServers": {
         "ddg-search": {
-            "command": "python",
-            "args": ["path/to/ddg_search_server.py"]
+            "command": "uvx",
+            "args": ["duckduckgo-mcp-server"]
         }
     }
 }
@@ -42,20 +44,17 @@ pip install "mcp[cli]" httpx beautifulsoup4
 
 3. Restart Claude Desktop
 
-### Direct Usage
+### Development
 
-Run the server directly:
-
-```bash
-python ddg_search_server.py
-```
-
-Or use the MCP CLI for development:
+For local development, you can use the MCP CLI:
 
 ```bash
-mcp dev ddg_search_server.py
-```
+# Run with the MCP Inspector
+mcp dev server.py
 
+# Install locally for testing with Claude Desktop
+mcp install server.py
+```
 ## Available Tools
 
 ### 1. Search Tool
