@@ -10,8 +10,6 @@ A Model Context Protocol (MCP) server that provides web search capabilities thro
 - **Error Handling**: Comprehensive error handling and logging
 - **LLM-Friendly Output**: Results formatted specifically for large language model consumption
 
-I'll help you update your README with the new installation and configuration instructions. Based on your successful PyPI publication, here's how we should modify the Installation and Usage sections of your README:
-
 ## Installation
 
 Install directly from PyPI using `uv`:
