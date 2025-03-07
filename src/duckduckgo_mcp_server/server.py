@@ -133,7 +133,7 @@ class DuckDuckGoSearcher:
             await ctx.info(f"Successfully found {len(results)} results")
             return results
 
-        except httpx.TimeoutError:
+        except httpx.TimeoutException:
             await ctx.error("Search request timed out")
             return []
         except httpx.HTTPError as e:
@@ -194,7 +194,7 @@ class WebContentFetcher:
             )
             return text
 
-        except httpx.TimeoutError:
+        except httpx.TimeoutException:
             await ctx.error(f"Request timed out for URL: {url}")
             return "Error: The request timed out while trying to fetch the webpage."
         except httpx.HTTPError as e:
