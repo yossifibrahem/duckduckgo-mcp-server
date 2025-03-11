@@ -4,6 +4,10 @@
 
 A Model Context Protocol (MCP) server that provides web search capabilities through DuckDuckGo, with additional features for content fetching and parsing.
 
+<a href="https://glama.ai/mcp/servers/phcus2gcpn">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/phcus2gcpn/badge" alt="DuckDuckGo Server MCP server" />
+</a>
+
 ## Features
 
 - **Web Search**: Search DuckDuckGo with advanced rate limiting and result formatting
